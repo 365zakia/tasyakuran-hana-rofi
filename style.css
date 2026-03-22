@@ -158,7 +158,8 @@ p {
     letter-spacing: 5px; 
     color: #5d467c;
     font-weight: 400 !important; 
-    margin-top: 5px; 
+    margin-top: 5px;
+    margin-left: 2vh;
     opacity: 0; 
     transform: translateY(20px); 
     transition: all 1.5s ease 1s;
