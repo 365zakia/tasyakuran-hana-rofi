@@ -636,7 +636,7 @@ p {
     position: absolute; 
     transform: translateX(-5%); 
     top: 40%; 
-    left: 3%; 
+    left: 0%; 
     width: 72%; 
 }
 
@@ -681,6 +681,20 @@ p {
     cursor: pointer; 
 
     animation: pulse-animation 2s infinite; 
+}
+
+#status {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    margin-left: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: #f0edf5 !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    text-align: center;
+    line-height: 1.4;
 }
 
 /* ========================================= */
