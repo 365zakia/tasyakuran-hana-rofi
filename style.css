@@ -359,53 +359,45 @@ p {
 .show-page4 .anim-page4:nth-child(3) { transition-delay: 0.8s; }
 
 /* --- HALAMAN 5 : ACARA --- */
-/* --- HALAMAN 5 : ACARA --- */
 .page-5 {
     width: 100%; 
-    min-height: 100vh; /* Memastikan halaman ada tingginya */
+    min-height: 40vh; 
     background-image: url('background-halaman-5.webp');
-    background-size: cover; 
-    background-position: center; 
+    background-size: 100% auto; 
+    background-position: top center; 
     background-repeat: no-repeat;
     display: flex; 
     justify-content: center; 
+    align-items: flex-start; 
+    text-align: center;
+    position: relative; 
+    padding-bottom: 122px;
+}
+
+.event-container { 
+    position: relative; 
+    width: 100%; 
+    max-width: 400px; 
+    top: 147px; 
+    display: flex; 
+    justify-content: center; 
     align-items: center; 
-    position: relative; /* Anchor untuk bunga */
-    overflow: hidden;
 }
 
 .floral-frame { 
-    position: absolute; 
-    /* Paksa nempel di semua sudut */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    
-    object-fit: fill; /* Ini yang bikin dia simetris kayak di Canva */
-    z-index: 1; /* Angka kecil supaya di bawah teks */
+    position: relative; 
+    top: -25px; 
+    width: 105%; 
+    z-index: 2; 
     pointer-events: none; 
-    
-    /* Kembalikan animasi bawaanmu */
     opacity: 0; 
     transform: scale(0.9); 
     transition: all 1.5s cubic-bezier(0.22, 1, 0.36, 1); 
 }
 
-/* Pastikan class ini dipicu oleh JS-mu saat scroll */
-.show-page5 .floral-frame {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.event-container { 
-    position: relative; 
-    z-index: 10; /* Angka besar supaya di ATAS bunga */
-    width: 100%; 
-    max-width: 400px;
-    /* Hapus top: 147px dulu, kita lihat dia ke tengah atau enggak */
+.show-page5 .floral-frame { 
+    opacity: 1; 
+    transform: scale(1); 
 }
 
 .event-wrapper { 
