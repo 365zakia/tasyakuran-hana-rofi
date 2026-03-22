@@ -129,27 +129,44 @@
 
         <!-- Form dengan animasi fade up tipis -->
         <form id="wish-form" class="anim-wish" style="transition-delay: 0.6s;">
-            <input type="text" id="nama" placeholder="Nama" required>
-            <textarea id="ucapan" placeholder="Beri Doa & Ucapan" required></textarea>
-            
-            <div class="rsvp-group">
-                <p class="label-rsvp">Konfirmasi Kehadiran</p>
-                <div class="rsvp-options">
-                    <label class="rsvp-item">
-                        <input type="radio" name="kehadiran" value="Hadir" required>
-                        <span class="rsvp-btn">Ya</span>
-                    </label>
-                    <label class="rsvp-item">
-                        <input type="radio" name="kehadiran" value="Tidak Hadir">
-                        <span class="rsvp-btn">Tidak</span>
-                    </label>
+    <input type="text" name="nama" id="nama" placeholder="Nama" required>
+    
+    <textarea name="ucapan" id="ucapan" placeholder="Beri Doa & Ucapan" required></textarea>
+    
+    <div class="rsvp-group">
+        <p class="label-rsvp">Konfirmasi Kehadiran</p>
+        <div class="rsvp-options">
+            <label class="rsvp-item">
+                <input type="radio" name="kehadiran" value="Hadir" required>
+                <span class="rsvp-btn">Ya</span>
+            </label>
+            <label class="rsvp-item">
+                <input type="radio" name="kehadiran" value="Tidak Hadir">
+                <span class="rsvp-btn">Tidak</span>
+            </label>
+        </div>
+    </div>
+    <button type="submit" class="btn-kirim">Kirim</button>
+    <p id="status"></p>
+</form>
+
+    <!-- SECTION 7: GIFT (Ditambah loading lazy) -->
+    <section class="gift-section hidden">
+        <div class="gift-container">
+            <img src="frame-hadiah.webp" class="frame-hadiah anim-gift" loading="lazy">
+            <div class="gift-content">
+                <img src="kado.webp" class="icon-kado anim-gift" loading="lazy">
+                <h2 class="gift-title anim-gift">Tanda Kasih</h2>
+                <p class="gift-desc anim-gift">Kehadiran serta doa restu Bapak/Ibu/Saudara/i di pernikahan kami sudah lebih dari cukup. Namun, jika berkenan memberikan hadiah, kami telah menyediakan amplop digital. Terima kasih.</p>
+                <img src="logo-mandiri.webp" class="bank-logo anim-gift" loading="lazy">
+                <p class="account-name anim-gift">Hana Mianti</p>
+                <p id="norek" class="anim-gift">9000046301181</p>
+                <div class="account-number-display anim-gift" onclick="copyNorek()">
+                    <span id="copy-toast">Salin</span>
                 </div>
             </div>
-            <button type="submit" class="btn-kirim">Kirim</button>
-            <p id="status"></p>
-        </form>
-    </div>
-</section>
+        </div>
+    </section>
 
     <audio id="bg-music" loop>
         <source src="nothings.mp3" type="audio/mpeg">
@@ -165,6 +182,7 @@
     const page4 = document.querySelector('.page-4');
     const page5 = document.querySelector('.page-5');
     const wishesSection = document.querySelector('.wishes-section');
+    const giftSection = document.querySelector('.gift-section'); 
     const music = document.getElementById("bg-music");
     let petalInterval;
 
@@ -174,7 +192,7 @@
         heroSection.style.transition = '0.8s';
         setTimeout(() => {
             heroSection.classList.add('hidden');
-            [mainSection, page3, page4, page5, wishesSection].forEach(el => {
+            [mainSection, page3, page4, page5, wishesSection, giftSection].forEach(el => {
                 if(el) el.classList.remove('hidden');
             });
             setTimeout(() => {
@@ -204,6 +222,7 @@
         if(page4 && page4.getBoundingClientRect().top < tinggiLayar - 200) page4.classList.add("show-page4");
         if(page5 && page5.getBoundingClientRect().top < tinggiLayar - 200) page5.classList.add("show-page5");
         if(wishesSection && wishesSection.getBoundingClientRect().top < tinggiLayar - 200) wishesSection.classList.add("show-wish");
+        if(giftSection && giftSection.getBoundingClientRect().top < tinggiLayar - 200) giftSection.classList.add("show-gift");
     });
 
     function copyNorek() {
